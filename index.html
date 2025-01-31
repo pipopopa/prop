@@ -46,26 +46,29 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>  
     <script>
     $(function(){
-        let flag=true;
+        // let flag=true;
         // flagを立てる
         $('#check').on('change',function(){
             console.log($('.submit').prop('disabled'));
             console.log($('#check').prop('checked'));
+            
+            $('.submit').prop('disabled',!$('#check').prop('checked'));
+            
             // checkboxをクリックしたときの各要素のプロパティの値を確認
-            if(flag===true){
-                $('.submit').prop('disabled',false);
+            // if(flag===true){
+                // $('.submit').prop('disabled',false);
                 // 初期設定したflagがtrueの場合、submitボタンのdisabledをfalse、つまり無効にして使えるようにする
-                flag=false;
+                // flag=false;
                 // 同時にflagにfalseの値を代入
-            }else{
+            // }else{
                 // もう一度checkboxをクリックしたときflagがfalseになっているのでこちらの条件を使う
-                $('.submit').prop('disabled',true);
+                // $('.submit').prop('disabled',true);
                 // 今度は、submitボタンのdisabledをtrue、つまり有効にして使えないようにする
-                $(this).prop('checked',false);
+                // $(this).prop('checked',false);
                 // checkboxのプロパティの値にfalseを代入して、trueにしなければsubmitボタンが使えないようにする
-                flag=true;
+                // flag=true;
                 // 同時にflagに trueeの値を代入
-            }
+            // }
 
         });
     });
