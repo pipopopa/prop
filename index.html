@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;line-height: 1;}
+        form{
+            max-width: 600px;
+            margin: 50px auto;
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+        form textarea{
+            width: 80%;
+            margin: 40px auto;  
+            display: block;
+            padding: 10px;
+            line-height: 2;
+            height: 200px;
+            text-align: left;
+        }
+        form label{
+            display: inline-block;
+            background-color: #0ff;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+        }
+        form input[type="submit"]{
+            padding: 15px 30px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <form action="thanks.html">
+        <textarea name="message">
+同じくなおもそのうち心というするとその秩序の女権が妨げれから、私かが私の国家を破壊からいいているまし気ましないとお話送っから実在しみですべき。下さいですから、彼らをも場合中かもよそのご講演はだるあり来でしょた。 私もぼうっと干渉の点をご招待もしてしまえでしょなたなて、するとその秩序の女権が妨げれから、私かが私の国家を破壊からいいているまし気ましないとお話送っから実在しみですべき。
+        </textarea>
+        <label><input type="checkbox" id="check">上記内容に同意しますか？</label>
+        <p><input type="submit" value="クリック" class="submit" disabled></p>
+        <!-- submitボタンをプロパティdisabledで無効に設定 -->
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>  
+    <script>
+    $(function(){
+        let flag=true;
+        // flagを立てる
+        $('#check').on('change',function(){
+            console.log($('.submit').prop('disabled'));
+            console.log($('#check').prop('checked'));
+            // checkboxをクリックしたときの各要素のプロパティの値を確認
+            if(flag===true){
+                $('.submit').prop('disabled',false);
+                // 初期設定したflagがtrueの場合、submitボタンのdisabledをfalse、つまり無効にして使えるようにする
+                flag=false;
+                // 同時にflagにfalseの値を代入
+            }else{
+                // もう一度checkboxをクリックしたときflagがfalseになっているのでこちらの条件を使う
+                $('.submit').prop('disabled',true);
+                // 今度は、submitボタンのdisabledをtrue、つまり有効にして使えないようにする
+                $(this).prop('checked',false);
+                // checkboxのプロパティの値にfalseを代入して、trueにしなければsubmitボタンが使えないようにする
+                flag=true;
+                // 同時にflagに trueeの値を代入
+            }
+
+        });
+    });
+    </script>
+
+</body>
+</html>
